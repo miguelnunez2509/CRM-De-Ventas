@@ -30,8 +30,11 @@ jobs:
         working-directory: frontend
 
       - name: Build for GitHub Pages
-        run: MODE=ghpages npx vite build
+        run: npx vite build
         working-directory: frontend
+        env:
+          VITE_MOCK: true
+          VITE_BASE_URL: /CRM-De-Ventas/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

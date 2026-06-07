@@ -1,12 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-const isGhPages = process.env.MODE === 'ghpages';
-
 export default defineConfig({
   plugins: [react()],
-  base: isGhPages ? '/crm-de-ventas/' : '/',
-  define: isGhPages ? { 'import.meta.env.VITE_MOCK': '"true"' } : {},
+  base: process.env.VITE_BASE_URL || '/',
   server: {
     port: 5173,
     proxy: {
