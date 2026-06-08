@@ -34,7 +34,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_MOCK: true
-          VITE_BASE_URL: /CRM-De-Ventas/
+          VITE_BASE_URL: "./"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
